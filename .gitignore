@@ -1,0 +1,5 @@
+__pycache__
+build/
+dist/
+mnzipcode.egg-info/
+test.py
