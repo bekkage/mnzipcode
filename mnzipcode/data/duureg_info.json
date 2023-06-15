@@ -1,0 +1,92 @@
+[
+  {
+    "mnname": "Багануур дүүрэг",
+    "name": "Baganuur",
+    "district": 5,
+    "population_2020": 25261,
+    "population_2015": 25731,
+    "population_2010": 25969,
+    "area": 620.2,
+    "density": 41.9
+  },
+  {
+    "mnname": "Багахангай дүүрэг",
+    "name": "Bagakhangai",
+    "district": 2,
+    "population_2020": 3776,
+    "population_2015": 3827,
+    "population_2010": 3864,
+    "area": 140.0,
+    "density": 27.6
+  },
+  {
+    "mnname": "Баянгол дүүрэг",
+    "name": "Bayangol",
+    "district": 23,
+    "population_2020": 160479,
+    "population_2015": 160818,
+    "population_2010": 165159,
+    "area": 29.5,
+    "density": 5598.6
+  },
+  {
+    "mnname": "Баянзүрх дүүрэг",
+    "name": "Bayanzurkh",
+    "district": 28,
+    "population_2020": 196132,
+    "population_2015": 211614,
+    "population_2010": 221565,
+    "area": 1244.1,
+    "density": 178.1
+  },
+  {
+    "mnname": "Налайх дүүрэг",
+    "name": "Nalaikh",
+    "district": 7,
+    "population_2020": 26529,
+    "population_2015": 27297,
+    "population_2010": 28152,
+    "area": 687.6,
+    "density": 40.9
+  },
+  {
+    "mnname": "Сонгинохайрхан дүүрэг",
+    "name": "Songinokhairkhan",
+    "district": 32,
+    "population_2020": 204587,
+    "population_2015": 211056,
+    "population_2010": 220295,
+    "area": 1200.6,
+    "density": 183.5
+  },
+  {
+    "mnname": "Сүхбаатар дүүрэг",
+    "name": "Sukhbaatar",
+    "district": 20,
+    "population_2020": 117233,
+    "population_2015": 123041,
+    "population_2010": 129486,
+    "area": 208.4,
+    "density": 621.3
+  },
+  {
+    "mnname": "Хан-Уул дүүрэг",
+    "name": "Khan-Uul",
+    "district": 16,
+    "population_2020": 87912,
+    "population_2015": 90925,
+    "population_2010": 94670,
+    "area": 484.7,
+    "density": 195.3
+  },
+  {
+    "mnname": "Чингэлтэй дүүрэг",
+    "name": "Chingeltei",
+    "district": 19,
+    "population_2020": 130501,
+    "population_2015": 132883,
+    "population_2010": 136014,
+    "area": 89.3,
+    "density": 1523.1
+  }
+]
