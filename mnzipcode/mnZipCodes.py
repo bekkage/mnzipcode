@@ -1,21 +1,16 @@
 #!/usr/bin/env python3 
 import json 
 import re
-from os import path
 
-class zipCode:
+class ZipCode:
   def __init__(self) -> None:
     # LOAD ZIP CODE
-    with open('mnzipcode/zip.json', 'r') as f: 
-      zip_contents = f.read()
-
-    self.zip_codes: dict = json.loads(zip_contents)
+    with open('mnzipcode/data/zip.json', 'r') as f: 
+      self.zip_codes = json.loads(f.read())
 
     # LOAD PROVINCE info
-    with open('mnzipcode/province_info.json', 'r') as f: 
-      province_info_contents = f.read()
-
-    self.province_info: dict = json.loads(province_info_contents)
+    with open('mnzipcode/data/province_info.json', 'r') as f: 
+      self.province_info = json.loads(f.read())
 
   @staticmethod
   def flatten_list(lst):
@@ -24,9 +19,8 @@ class zipCode:
       if isinstance(item, dict):
         result.append(item)
       elif isinstance(item, list):
-        result.extend(zipCode.flatten_list(item))
+        result.extend(ZipCode.flatten_list(item))
     return result
-
 
   def find_label_by_zipcode(self, zipcode: int, items=None) -> list:
     if items==None:
@@ -41,10 +35,14 @@ class zipCode:
               'stat': 'province'
             }
           else:
-            return {
+            ret_data = {
               'name': item['label'],
               'stat': 'sum'
             }
+            if 'дүүрэг' in item['label']:
+              ret_data['stat'] = 'duureg'
+
+            return ret_data
         else: 
           return {
               'name': item['label'],
@@ -72,11 +70,14 @@ class zipCode:
               'stat': 'province'
             } )
           else:
-            results.append( {
+            ret_data: dict = {
               'name': item['label'],
               'zipcode': item['zipcode'],
               'stat': 'sum'
-            } )
+            }
+            if 'дүүрэг' in item['label']:
+              ret_data['stat'] = 'duureg'
+            results.append(ret_data)
         else: 
           results.append( {
             'name': item['label'],
@@ -89,7 +90,7 @@ class zipCode:
           
           results.append(sub_zipcodes)
 
-    return zipCode.flatten_list(results)
+    return ZipCode.flatten_list(results)
   
   def get_province_info(self, province_mn_name: str) -> dict:
     for province in self.province_info:
@@ -119,7 +120,8 @@ class zipCode:
           ret_data.append(result)
 
       return ret_data 
-  
+    
+  #3
   def isReal(self, zipcode: int) -> bool:
     result = self.find_label_by_zipcode(zipcode)
 
