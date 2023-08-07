@@ -1,41 +1,21 @@
 import setuptools 
 
+with open('README.md') as f: 
+  readme = f.read()
+
 setuptools.setup(
   name='mnzipcode',
-  version='0.0.9',
+  version='0.1.0',
   author='Bekkage',
-  description='mnzipcodes is a simple library for querying Mongolian zip codes.',
-  package_data={
-    'mnzipcode': ['data/*.json']
-  },
+  author_email='bilguunsec@gmail.com',
+  url='https://github.com/bekkage/mnzipcode',
+  description='mnzipcode is a simple library for querying Mongolian zip codes.',
+  #package_data={
+  #  'mnzipcode': ['data.json.bz2']
+  #},
   long_description_content_type= 'text/markdown',
-  long_description="""
-mnzipcode is a simple library for querying Mongolian zip codes.
-
-### Installation
-
-mnzipcode is available on PyPi:
-```
-# python -m pip install mnzipcode
-```
-
-Example usage:
-
-```python
->>> import mnzipcode
->>> 
->>> obj = mnzipcode.ZipCode()
->>> 
->>> obj.matching_by_zipcode(11000)
-{'name': 'Ulaanbaatar', 'stat': 'province', 'mnname': 'Улаанбаатар', 'year_established': 1942, 'area': 4704.4, 'population': 1539810, 'density': 327}
->>> 
->>> obj.matching_by_name('Дархан-Уул')
-[{'name': 'Darkhan-Uul', 'zipcode': '45000', 'stat': 'province', 'mnname': 'Дархан-Уул', 'year_established': 1994, 'area': 3275.0, 'population': 107018, 'density': 33}, {'name': 'Дархан-Уул', 'zipcode': '81041', 'stat': 'bag'}, {'name': 'Дархан-Уул', 'zipcode': '81063', 'stat': 'bag'}]
->>> 
->>> obj.isReal(11000)
-True
-```
-
-  """,
-  package=['mnzipcode']
+  long_description=readme,
+  keywords='mnzipcode zipcode mongolia mn zip code',
+  package=['mnzipcode'],
+  include_package_data=True,
 )
