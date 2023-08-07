@@ -70,7 +70,7 @@ def similar_to(zipcode: int, data: dict = DATA['zipcode']) -> list:
 def filter(data: dict = DATA['zipcode'], **filter_values) -> list:
   filtered_data: list = []
   for _it in data:
-    if all([key in _it and _it[key] == value for key, value in filter_values.items()]):
+    if all([key in _it and _it[key.lower()] == value.lower() for key, value in filter_values.items()]):
       filtered__it_dict: dict = _it.copy()
       filtered__it_dict.pop('sub_items', None) 
       filtered_data.append(filtered__it_dict)
