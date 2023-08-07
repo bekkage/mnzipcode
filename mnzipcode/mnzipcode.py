@@ -17,7 +17,7 @@ from sys import version_info
 __author__: str = 'Bilguun Ganchuluun'
 __email__: str = 'bilguunsec@gmail.com'
 __package__: str = 'mnzipcode'
-__version__: str = '0.1.0'
+__version__: str = '0.1.23'
 
 VALID_ZIPCODE_LENGTH: int = 5
 
@@ -51,10 +51,10 @@ def matching_by_zipcode(zipcode: int, data: dict = DATA['zipcode']) -> dict:
         return return_data
   return None 
 
-def similar_to(zipcode: int, data: dict = DATA['zipcode']) -> dict: 
+def similar_to(zipcode: int, data: dict = DATA['zipcode']) -> list: 
   similar_data: list = []
   for _it in data:
-    if _it['zipcode'].startswith('123'):
+    if _it['zipcode'].startswith(str(zipcode)):
       if 'sub_items' in _it: 
         filtered_dict: dict = _it.copy()
         filtered_dict.pop('sub_items', None) 
@@ -68,7 +68,7 @@ def similar_to(zipcode: int, data: dict = DATA['zipcode']) -> dict:
         [similar_data.append(_ret_data) for _ret_data in return_data]
   return similar_data 
 
-def filter(data: dict = DATA['zipcode'], **filter_values):
+def filter(data: dict = DATA['zipcode'], **filter_values) -> list:
   filtered_data: list = []
   for _it in data:
     if all([key in _it and _it[key] == value for key, value in filter_values.items()]):
