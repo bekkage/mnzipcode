@@ -55,4 +55,26 @@ mnzipcode is available on PyPi:
 
 >>> mnzipcode.is_real(11000)
 True
+
+>>> mnzipcode.similar_to(8501)
+[
+  {'mnname': 'Зүүнхангай', 
+  'zipcode': '85010'
+  }, 
+  {
+    'mnname': 'Даланбулаг', 
+    'zipcode': '85011'
+  }, 
+  {
+    'mnname': 'Хайрхан', 'zipcode': '85013'
+  }, 
+  {
+    'mnname': 'Жаргалант', 
+    'zipcode': '85015'
+  }, 
+  {
+    'mnname': 'Баянгол', 
+    'zipcode': '85017'
+  }
+]
 ```
