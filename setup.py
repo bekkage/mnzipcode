@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setuptools.setup(
   name='mnzipcode',
-  version='0.1.23',
+  version='0.1.24',
   author='Bekkage',
   author_email='bilguunsec@gmail.com',
   url='https://github.com/bekkage/mnzipcode',
