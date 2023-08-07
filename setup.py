@@ -1,11 +1,11 @@
 import setuptools 
 
-with open('README.md') as f: 
+with open('README.md', encoding='utf-8') as f: 
   readme = f.read()
 
 setuptools.setup(
   name='mnzipcode',
-  version='0.1.24',
+  version='0.1.25',
   author='Bekkage',
   author_email='bilguunsec@gmail.com',
   url='https://github.com/bekkage/mnzipcode',
@@ -17,5 +17,5 @@ setuptools.setup(
   long_description=readme,
   keywords='mnzipcode zipcode mongolia mn zip code',
   package=['mnzipcode'],
-  include_package_data=True,
+  #include_package_data=True,
 )

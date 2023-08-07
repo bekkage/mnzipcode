@@ -17,7 +17,6 @@ from sys import version_info
 __author__: str = 'Bilguun Ganchuluun'
 __email__: str = 'bilguunsec@gmail.com'
 __package__: str = 'mnzipcode'
-__version__: str = '0.1.24'
 
 VALID_ZIPCODE_LENGTH: int = 5
 
