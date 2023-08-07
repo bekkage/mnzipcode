@@ -39,7 +39,7 @@ def matching_by_zipcode(zipcode: int, data: dict = DATA['zipcode']) -> dict:
   for _it in data:
     if _it['zipcode'] == str(zipcode):
       if 'sub_items' in _it: 
-        filtered_dict: dict = _it
+        filtered_dict: dict = _it.copy()
         filtered_dict.pop('sub_items', None) 
         return filtered_dict
       else: 
@@ -51,11 +51,28 @@ def matching_by_zipcode(zipcode: int, data: dict = DATA['zipcode']) -> dict:
         return return_data
   return None 
 
+def similar_to(zipcode: int, data: dict = DATA['zipcode']) -> dict: 
+  similar_data: list = []
+  for _it in data:
+    if _it['zipcode'].startswith('123'):
+      if 'sub_items' in _it: 
+        filtered_dict: dict = _it.copy()
+        filtered_dict.pop('sub_items', None) 
+        similar_data.append(filtered_dict)
+      else: 
+        similar_data.append(_it)
+    
+    if 'sub_items' in _it: 
+      return_data = similar_to(zipcode, _it['sub_items'])
+      if return_data: 
+        [similar_data.append(_ret_data) for _ret_data in return_data]
+  return similar_data 
+
 def filter(data: dict = DATA['zipcode'], **filter_values):
   filtered_data: list = []
   for _it in data:
     if all([key in _it and _it[key] == value for key, value in filter_values.items()]):
-      filtered__it_dict: dict = _it
+      filtered__it_dict: dict = _it.copy()
       filtered__it_dict.pop('sub_items', None) 
       filtered_data.append(filtered__it_dict)
     
